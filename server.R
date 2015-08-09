@@ -14,8 +14,7 @@ shinyServer(
       lower <- input$range[1]
       upper <- input$range[2]
       
-      # with input$radio, e.g.
-      
+      # plot data (y axis) based on user selection
       if (input$radio==1) { 
         keywords <- arrange(keywords, CPC)
         keywords$Keyword <- revFactor(factor(keywords$Keyword, levels = keywords$Keyword))
@@ -41,8 +40,7 @@ shinyServer(
         chartTitle <- "Click-through Rate"
         yaxisLabel <- "Click-through Rate"
         
-      }
-        else if (input$radio==4) {
+      } else if (input$radio==4) {
         keywords <- arrange(keywords, Revenue)
         keywords$Keyword <- revFactor(factor(keywords$Keyword, levels = keywords$Keyword))
         keywords <- arrange(keywords, desc(Revenue))
@@ -51,7 +49,21 @@ shinyServer(
         yaxisLabel <- "Total Revenue GPB (millions)"
       }
       
-      ggplot(data=keywords[upper:lower,], aes_string(x="Keyword", y=chartValue, fill=chartValue)) +
+      # plot data (y axis) based on user selection
+      if (input$radio2==1) { 
+        barColor <- "CPC"
+        
+      } else if (input$radio2==2) {
+        barColor <- "Clicks"
+        
+      } else if (input$radio2==3) {
+        barColor <- "CTR"
+        
+      } else if (input$radio2==4) {
+        barColor <- "Revenue"
+      }
+      
+      ggplot(data=keywords[upper:lower,], aes_string(x="Keyword", y=chartValue, fill=barColor)) +
         geom_bar(stat="identity") +
         ggtitle(chartTitle) +
         ylab(yaxisLabel) + xlab(NULL) +

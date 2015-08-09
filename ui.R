@@ -21,6 +21,9 @@ shinyUI(pageWithSidebar(
     HTML("July 2012 - February 2013."),
     plotOutput('newHist'),
     tags$p(""),
-    tags$b("About this application:")
+    tags$b("About this application: "),
+    HTML("This application was written in R using the Shiny package for Web interactivity.
+         The source code for this application is available on "),
+    tags$a(href="https://github.com/alexheat/SearchExplorer/", "https://github.com/alexheat/SearchExplorer/")
   )
 ))
