@@ -51,6 +51,8 @@ shinyServer(
       }
       
       # plot data (y axis) based on user selection
+      Variables <- as.factor(c("CPC","Clicks","CTR","Revenue"))
+      
       if (input$radio2==1) { 
         barColor <- "CPC"
         
@@ -62,20 +64,15 @@ shinyServer(
         
       } else if (input$radio2==4) {
         barColor <- "Revenue"
-      }
+      }    
       
-      ggplot(data=keywords[upper:lower,], aes_string(x="Keyword", y=chartValue, fill=barColor)) +
+  ggplot(data=keywords[upper:lower,], aes_string(x="Keyword", y=chartValue, fill=barColor)) +
         geom_bar(stat="identity") +
         ggtitle(chartTitle) +
         ylab(yaxisLabel) + xlab(NULL) +
-        #scale_y_sqrt(chartValue) +
-        theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5, size = 12))      
-
-        })
+        theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5, size = 12)) +
+        theme(plot.title = element_text(size=20, face="bold", vjust=2))
+      })
     
   }
 )
-
-
-# You can access the value of the widget with input$action, e.g.
-# output$value <- renderPrint({ input$action })
