@@ -2,6 +2,7 @@ library(shiny)
 library(UsingR)
 library("ggplot2")
 library("dplyr")
+library("Rcell")
 
 keywords <- read.csv("keywords.csv")
 keywords <- keywords[-1,]
