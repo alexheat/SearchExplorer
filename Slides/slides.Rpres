@@ -1,0 +1,49 @@
+Shiny Search Word Explorer
+========================================================
+author: Alex Heaton
+date: August 2015
+
+Interactive reporting application built in R and Shiny.
+<https://alexheat.shinyapps.io/SearchExplorer>
+
+
+
+
+For Final Project of Developing Data Products class as part of Data Science Specialization from John Hopkins University. 
+
+About This Application 
+========================================================
+
+Interactive dashborad that a company that sells or buys search could use to rank search ads based on the following criteria: 
+
+- Cost per click (CPC)
+- Click-through rate (CTR)
+- Toal clicks
+- Total revenue/costs (CPC x Clicks)
+
+Data is from the [Open Advertising Dataset](https://code.google.com/p/open-advertising-dataset/) July 2012 - February 2013. 
+
+
+Sample Data (keywords.csv)
+========================================================
+
+```{r, results='asis',echo=FALSE}
+library(xtable)
+keywords <- read.csv("../keywords.csv")
+keywords <- keywords[-1,-1]
+print(xtable(keywords[1:12,]), type = "html", include.rownames= FALSE)
+```
+
+Screenshot of Application
+========================================================
+
+![Screenshot](Screenshot.png)
+Try it at <https://alexheat.shinyapps.io/SearchExplorer>
+
+
+Future Enhancements
+========================================================
+- Click keyword to drill-into details for that word. Such as trendline of historical performance of CPC, CTR, Clicks, and Revenue.
+- Search for specific terms.
+- Sort list alpabetically to find related terms.
+- Find all related terms. For example select "stock trading" and show all terms that include the words "stock" or "trading" to find the performance of related terms.
