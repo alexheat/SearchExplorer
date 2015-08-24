@@ -33,6 +33,8 @@ keywords <- read.csv("../keywords.csv")
 keywords <- keywords[-1,-1]
 print(xtable(keywords[1:12,]), type = "html", include.rownames= FALSE)
 ```
+*Note, this table was rendered from the live data in the csv file.*
+
 
 Screenshot of Application
 ========================================================

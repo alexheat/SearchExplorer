@@ -28,7 +28,7 @@ Sample Data (keywords.csv)
 ========================================================
 
 <!-- html table generated in R 3.2.1 by xtable 1.7-4 package -->
-<!-- Mon Aug 17 05:14:28 2015 -->
+<!-- Mon Aug 24 11:11:47 2015 -->
 <table border=1>
 <tr> <th> Keyword </th> <th> Clicks </th> <th> CPC </th> <th> CTR </th>  </tr>
   <tr> <td> 0 apr credit card </td> <td align="right"> 885.63 </td> <td align="right"> 6.60 </td> <td align="right"> 3.49 </td> </tr>
@@ -44,6 +44,8 @@ Sample Data (keywords.csv)
   <tr> <td> 125 refinance </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> </tr>
   <tr> <td> 21 auto century insurance </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> </tr>
    </table>
+*Note, this table was rendered from the live data in the csv file.*
+
 
 Screenshot of Application
 ========================================================
